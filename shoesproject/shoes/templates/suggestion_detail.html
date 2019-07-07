@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<Meta-Charset UTF-8>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+</head>
+<div calss="container" style="padding: 60px 100px;">
+    <h2 style="margin-bottom: 45px;">{{ suggestion.title }}</h2>
+    <p>{{ suggestion.body }}</p>
+
+    <form action="{% url 'delete' suggestion.id %}" method="POST" >
+        {% csrf_token %}
+        <input type="submit" value ="삭제하기" style="padding-left:0px; padding-top:50px; color:dimgrey; background: transparent; border: none;">
+    </form>
+    
+
+    <form action="{% url 'edit' suggestion.id %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value ="수정하기" style="padding: 6px 0px; color:dimgrey; background: transparent; border: none;">
+    </form>
+    
+
+
+    <a href="{% url 'suggestion' %}" >돌아가기</a>
+</div>
+
+{% endblock %}

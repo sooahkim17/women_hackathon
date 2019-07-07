@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+  <h1 align="center" style="margin:50px" >그 신발, 남아있니?</h1>
+
+<!--<img src="https://image.flaticon.com/icons/svg/1882/1882401.svg" width="200px" height="200px" >-->
+   <div align="center"><img src="https://image.flaticon.com/icons/svg/1882/1882401.svg" alt="그림 설명" width="400px" height="400px" /></div>   
+    <div align="center">
+           <!--<form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0" position="center" style="width:800px;">-->
+            <form action="{% url 'search' %}" method="GET" style="margin:20px 100px">
+             {%csrf_token%}
+            
+            <input type="text" name="q" value="{{ q }}" class="form-control mr-sm-2" placeholder="Search" aria-label="Search"  >
+            <br>
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" color= "#FAC896" >Search</button>
+            
+          </form>
+        
+      </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<Meta-Charset UTF-8>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+</head>
+<div class="container" style="color:#000000">
+    {% for suggestion in suggestions.all %}
+    <br>
+    <br>
+        <h3>{{suggestion.title}}</h3>
+        <p>{{suggestion.summary}} <a href="{% url 'suggestion_detail' suggestion.id %}">...내용보기</a></p>
+    {% endfor %} 
+    <br>
+</div>
+
+{% endblock %}
